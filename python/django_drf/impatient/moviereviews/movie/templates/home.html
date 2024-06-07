@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Search for Movie:</label>
+        <input type="text" class="form-control" name="searchMovie" aria-describedby="searchTextHelp">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<p></p>
+
+{% if search_term %}
+    <p>Searching for: {{ search_term }}</p>
+{% endif %}
+
+<p></p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for movie in movies %}
+
+        <div class="col" v-for="movie in movies">
+
+            <div class="card">
+                <img class="card-img-top" src="{{ movie.image.url }}" alt="">
+                <div class="card-body">
+                    <a href="{% url 'detail' movie.id %}">
+                        <h5 class="card-title fw-bold">{{ movie.title }}</h5>
+                    </a>
+                    <p class="card-text">{{ movie.description }}</p>
+                    {% if movie.url %}
+                        <a href="{{ movie.url }}" class="btn btn-primary">Movie Link</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+<!-- <br> -->
+<!-- <br> -->
+<!---->
+<!-- <h2>Join our mailing list: </h2> -->
+<!-- <form action="{-% url 'signup' %}"> -->
+<!--     <div class="mb-3"> -->
+<!--         <label class="form-label" for="email">Enter your email</label> -->
+<!--     <input type="email" class="form-control" name="email" /> -->
+<!--     </div> -->
+<!--     <button class="btn btn-primary" type="submit">Sign Up</button> -->
+<!-- </form> -->
+
+{% endblock content %}
