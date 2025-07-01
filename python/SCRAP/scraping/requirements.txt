@@ -35,6 +35,6 @@ tldextract==5.1.2
 tomli==2.2.1
 twisted==24.7.0
 typing-extensions==4.12.2
-urllib3==2.2.2
+urllib3==2.5.0
 w3lib==2.2.1
 zope-interface==6.4.post2
