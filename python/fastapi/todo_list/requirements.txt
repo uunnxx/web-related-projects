@@ -58,7 +58,7 @@ markupsafe==2.1.5
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-orjson==3.10.7
+orjson==3.11.6
     # via fastapi
 pydantic==2.8.2
     # via
