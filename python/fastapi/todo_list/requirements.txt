@@ -76,7 +76,7 @@ pygments==2.20.0
     # via rich
 pypika-tortoise==0.1.6
     # via tortoise-orm
-python-dotenv==1.0.1
+python-dotenv==1.2.2
     # via
     #   pydantic-settings
     #   uvicorn
